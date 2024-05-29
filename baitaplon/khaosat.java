@@ -12,7 +12,7 @@ class nhaptt {
 
     nhaptt() {}
 
-    nhaptt(String mssv, String hovaten, boolean gt, int ntns, String noisinh, String email,String sdt) {
+    nhaptt(String mssv, String hovaten, boolean gt, int ntns, String noisinh, String email, String sdt) {
         this.mssv = mssv;
         this.hovaten = hovaten;
         this.gt = gt;
@@ -27,19 +27,23 @@ class nhaptt {
     }
 
     void xuat() {
-        System.out.println(mssv + "\t" + hovaten + "\t" + (gt ? "Nam" : "Nu") + "\t" + ntns + "\t" + noisinh + "\t" + email + "\t" + sdt + "\t");
+        System.out.println(mssv + "\t" + hovaten + "\t" + (gt ? Nam : Nu) + "\t" + ntns + "\t" + noisinh + "\t" + email + "\t" + sdt + "\t");
     }
 }
+class khaosat implements nhaptt {
 
-class cauhoicandat {
-    static String cauhoi;
-
-    cauhoicandat() {}
-
-    cauhoicandat(String cauhoi) {
-        cauhoicandat.cauhoi = cauhoi;
+class khaosat {
+    String option1;
+    String option2;
+    String option3;
+    String cauhoi;
+    khaosat() {}
+    khaosat(String option1, String option2, String option3, String cauhoi) {
+        this.option1 = option1;
+        this.option2 = option2;
+        this.option3 = option3;
+        this.cauhoi = cauhoi;
     }
-
     public void nhapcauhoi() { // thuchien khaosat
         Scanner scanner = new Scanner(System.in);
         System.out.println("Moi ban cho so luong cau hoi can dat:");
@@ -54,26 +58,8 @@ class cauhoicandat {
 
         scanner.close();
     }
-}
-
-class khaosat {
-    String question;
-
-    khaosat() {}
-
-    khaosat(String question) {
-        this.question = question;
-    }
-
-    public void ThucHienKhaoSat() {
+    public void thuchienkhaosat() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Moi ban cho so luong cau hoi can dat:");
-        int n = scanner.nextInt();
-        scanner.nextLine();  // Đọc bỏ dòng new line sau khi nhập số
-
-        for (int i = 1; i <= n; i++) {
-            System.out.print("Moi ban nhap cau hoi " + i + ": ");
-            String question = scanner.nextLine();
             
             System.out.println("Moi ban nhap cau tra loi:");
             System.out.print("Cau tra loi 1: ");
@@ -126,11 +112,13 @@ class khaosat {
             } else {
                 System.out.println("Cau tra loi cua ban la:  " + option1);
             }
-        }
 
         scanner.close();
     }
 }
+}
+
+
 
  class Main {
     public static void main(String[] args) {
@@ -153,43 +141,54 @@ class khaosat {
             switch (choice) {
                 case 1:
                     // Nhập thông tin sinh viên
-                    System.out.println("Ban da lua chon 1, moi nhap MSSV: ");
+                    System.out.println("Ban da lua chon 1 ");
+                    System.out.println("Ma so sinh vien:");
                     String mssv =  scanner.nextLine();
-                    System.out.println("Nhap ho va ten: ");
+
+                    System.out.println("Ho va ten: ");
                     String hovaten = scanner.nextLine();
-                    System.out.print("Nhap gioi tinh (true=Nam/false=Nu): ");
+
+                    System.out.println("Gioi tinh (Nam:true ; Nu: false): ");
                     boolean gt = scanner.nextBoolean();
+
+                    if ( gt == true) {
+                        System.out.println("Gioi tinh cua ban la Nam");
+                    } else if (gt == false) {
+                        System.out.println("Gioi tinh cua ban la Nu");
+                    } else return;
 
                     System.out.println("Nhap nam sinh: ");
                     int ntns = scanner.nextInt();
                     scanner.nextLine();
+
                     System.out.println("Nhap noi sinh: ");
                     String noisinh = scanner.nextLine();
+                    
                     System.out.println("Nhap email: ");
                     String email = scanner.nextLine();
                     System.out.println("Nhap so dien thoai: ");
                     String sdt = scanner.nextLine();
                     scanner.nextLine();
-
-                    nhaptt sinhvien = new nhaptt(mssv, hovaten, gt, ntns, noisinh, email, sdt);
+                case 2:
+                    System.out.println("Xac nhan thong tin tren la dung");
+                    nhaptt sinhvien = new nhaptt(mssv, hovaten, gt, ntns, noisinh, email, sdt); {}
                     sinhvien.xuat();
                     break;
 
-                case 2:
+                case 3:
                     // Nhập câu hỏi khác
                     System.out.println("Ban da lua chon 2, moi nhap cau hoi:");
-                    cauhoicandat ch = new cauhoicandat();
-                    ch.nhapcauhoi();
-                    break;
-
-                case 3:
-                    // Thực hiện khảo sát
-                    System.out.println("Ban da lua chon 3, moi nhap");
                     khaosat ks = new khaosat();
-                    ks.ThucHienKhaoSat();
+                    ks.nhapcauhoi();
                     break;
 
                 case 4:
+                    // Thực hiện khảo sát
+                    System.out.println("Ban da lua chon 3, moi nhap");
+                    ks.thuchienkhaosat();
+                    break;
+
+                case 5:
                     // Thoát
                     System.out.println("Ban da lua chon");
                     running = false;
