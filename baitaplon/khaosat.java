@@ -37,12 +37,18 @@ class khaosat {
     String option2;
     String option3;
     String cauhoi;
+
     khaosat() {}
-    khaosat(String option1, String option2, String option3, String cauhoi) {
+
+    nhapcauhoi() {}
+
+    nhapcauhoi(String cauhoi) {
+        this.cauhoi = cauhoi;
+    }
+    khaosat(String option1, String option2, String option3) {
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
-        this.cauhoi = cauhoi;
     }
     public void nhapcauhoi() { // thuchien khaosat
         Scanner scanner = new Scanner(System.in);
