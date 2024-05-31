@@ -14,7 +14,7 @@ public class nhaptt {
     public static final String Nam = "Nam";
     public static final String Nu = "Nu";
     nhaptt() {}
-    nhaptt(String mssv, String hovaten, boolean gt, int ntns, String noisinh, String email, String sdt) {
+    public void nhaptt(String mssv, String hovaten, boolean gt, int ntns, String noisinh, String email, String sdt) {
         this.mssv = mssv;
         this.hovaten = hovaten;
         this.gt = gt;
@@ -110,12 +110,11 @@ public class khaosat {
             }
         scanner.close();
     }
-public class Main {
+class Main {
 		public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
         khaosat ks = new khaosat();
-	public void khaosat ()
         
         while (running) {
             System.out.println("--------------------------------");
