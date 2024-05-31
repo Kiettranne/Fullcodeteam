@@ -2,7 +2,7 @@ package baitaplon;
 
 import java.util.Scanner;
 
-class nhaptt { 
+public class nhaptt { 
     String mssv;
     String hovaten;
     boolean gt;
@@ -30,7 +30,8 @@ class nhaptt {
         System.out.println(mssv + "\t" + hovaten + "\t" + (gt ? Nam : Nu) + "\t" + ntns + "\t" + noisinh + "\t" + email + "\t" + sdt + "\t");
     }
 }
-class khaosat {
+
+public class khaosat {
     String option1;
     String option2;
     String option3;
@@ -113,62 +114,67 @@ class Main {
 		public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
-        nhaptt sinhvien = null;
         khaosat ks = new khaosat();
+	public void khaosat ()
         
         while (running) {
             System.out.println("--------------------------------");
             System.out.println("MENU:");
             System.out.println("1. Nhap thong tin sinh vien");
-		System.out.println("2.Xac nhan thong tin");
+	    System.out.println("2.Xac nhan thong tin");
             System.out.println("3. Nhap cau hoi khac");
             System.out.println("4. Thuc hien khao sat");
             System.out.println("5. Thoat");
             System.out.println("--------------------------------");
-            System.out.print("Lua chon cua ban: ");
-            int choice = scanner.nextInt();
+	    int choice = scanner.nextInt();
+            System.out.print("Lua chon cua ban: " + choice);
             scanner.nextLine();  // Đọc bỏ dòng new line sau khi nhập số
             switch (choice) {
                 case 1:
                     // Nhập thông tin sinh viên
-                    System.out.println("Ban da lua chon 1 ");
+                    System.out.println("Ban da lua chon 1 \n ");
                     System.out.println("Ma so sinh vien:");
                     String mssv =  scanner.nextLine();
+			    
                     System.out.println("Ho va ten: ");
                     String hovaten = scanner.nextLine();
+			    
                     System.out.println("Gioi tinh (Nam:true ; Nu: false): ");
                     boolean gt = scanner.nextBoolean();
+			    
                     if ( gt == true) {
                         System.out.println("Gioi tinh cua ban la Nam");
                     } else if (gt == false) {
                         System.out.println("Gioi tinh cua ban la Nu");
                     } else return;
+			    
                     System.out.println("Nhap nam sinh: ");
                     int ntns = scanner.nextInt();
                     scanner.nextLine();
+			    
                     System.out.println("Nhap noi sinh: ");
                     String noisinh = scanner.nextLine();
                     
                     System.out.println("Nhap email: ");
                     String email = scanner.nextLine();
+			    
                     System.out.println("Nhap so dien thoai: ");
                     String sdt = scanner.nextLine();
                     scanner.nextLine();
                 case 2:
                     System.out.println("Xac nhan thong tin tren la dung");
-                    nhaptt sinhvien1 = new nhaptt(mssv, hovaten, gt, ntns, noisinh, email, sdt); {}
+                    nhaptt sinhvien = new nhaptt(mssv, hovaten, gt, ntns, noisinh, email, sdt); {}
                     sinhvien1.xuat();
                     break;
                 case 3:
                     // Nhập câu hỏi khác
                     System.out.println("Ban da lua chon 2, moi nhap cau hoi:");
-                    khaosat ks1 = new khaosat();
-                    ks1.nhapcauhoi();
+                    ks.nhapcauhoi();
                     break;
                 case 4:
                     // Thực hiện khảo sát
                     System.out.println("Ban da lua chon 3, moi nhap");
-                    ks1.thuchienkhaosat();
+                    ks.thuchienkhaosat();
                     break;
                 case 5:
                     // Thoát
