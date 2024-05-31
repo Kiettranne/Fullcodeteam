@@ -120,9 +120,10 @@ class Main {
             System.out.println("--------------------------------");
             System.out.println("MENU:");
             System.out.println("1. Nhap thong tin sinh vien");
-            System.out.println("2. Nhap cau hoi khac");
-            System.out.println("3. Thuc hien khao sat");
-            System.out.println("4. Thoat");
+		System.out.println("2.Xac nhan thong tin");
+            System.out.println("3. Nhap cau hoi khac");
+            System.out.println("4. Thuc hien khao sat");
+            System.out.println("5. Thoat");
             System.out.println("--------------------------------");
             System.out.print("Lua chon cua ban: ");
             int choice = scanner.nextInt();
