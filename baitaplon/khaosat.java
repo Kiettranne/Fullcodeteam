@@ -110,6 +110,7 @@ public class khaosat {
             }
         scanner.close();
     }
+}
 class Main {
 		public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -189,4 +190,4 @@ class Main {
         scanner.close();
     }
 }
-}
+
