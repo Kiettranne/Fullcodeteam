@@ -114,22 +114,8 @@ class khaosat {
         this.cauhoi = cauhoi;
     }
   
-    public void nhapcauhoi() { // thuchien khaosat
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Moi ban cho so luong cau hoi can dat:");
-        int n = scanner.nextInt();
-        scanner.nextLine();  // Đọc bỏ dòng new line sau khi nhập số
-        for (int i = 1; i <= n; i++) {
-            System.out.print("Cau hoi " + i + ": ");
-            String cauhoi = scanner.nextLine();
-            System.out.println(cauhoi);  // In câu hỏi ra để kiểm tra
-        }
-        scanner.close();
-    }
-
     public void thuchienkhaosat() {
         Scanner scanner = new Scanner(System.in);
-            
         System.out.println("Moi ban nhap cau tra loi:");
         System.out.print("Cau tra loi 1: ");
         String option1 = scanner.nextLine();
@@ -203,12 +189,11 @@ class Main {
             System.out.println("5. Thoat");
             System.out.println("--------------------------------");
             int choice = scanner.nextInt();
-            System.out.print("Lua chon cua ban: " + choice);
+            System.out.print("Lua chon cua ban: " + choice + "\n");
             scanner.nextLine();  // Đọc bỏ dòng new line sau khi nhập số
             switch (choice) {
                 case 1:
                     // Nhập thông tin sinh viên
-                    System.out.println("Ban da lua chon 1 \n ");
                     System.out.println("Ma so sinh vien:");
                     mssv = scanner.nextLine();
                     
@@ -248,16 +233,11 @@ class Main {
                     }
                     break;
                 case 3:
-                    // Nhập câu hỏi khác
-                    System.out.println("Ban da lua chon 3, moi nhap cau hoi:");
-                    ks.nhapcauhoi();
-                    break;
-                case 4:
                     // Thực hiện khảo sát
                     System.out.println("Ban da lua chon 4, moi nhap");
                     ks.thuchienkhaosat();
                     break;
-                case 5:
+                case 4:
                     // Thoát
                     System.out.println("Ban da lua chon 5");
                     running = false;
