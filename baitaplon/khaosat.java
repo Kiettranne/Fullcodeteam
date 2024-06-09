@@ -1,13 +1,11 @@
-package baitaplon;
+package Projecct;
 
 import java.util.Scanner;
 
  class nhaptt { 
-    private String mssv;
     private String hovaten;
     private boolean gt;
     private int ntns;
-    private String noisinh;
     private String email;
     private String sdt;
     
@@ -17,12 +15,10 @@ import java.util.Scanner;
     // Constructor
     public nhaptt() {}
 
-    public nhaptt(String mssv, String hovaten, boolean gt, int ntns, String noisinh, String email, String sdt) {
-        this.mssv = mssv;
+    public nhaptt(String hovaten, boolean gt, int ntns, String email, String sdt) {
         this.hovaten = hovaten;
         this.gt = gt;
         this.ntns = ntns;
-        this.noisinh = noisinh;
         this.email = email;
         this.sdt = sdt;
     }        
@@ -32,18 +28,10 @@ import java.util.Scanner;
     }
     
     public void xuat() {
-        System.out.println(mssv + "\t" + hovaten + "\t" + (gt ? NAM : NU) + "\t" + ntns + "\t" + noisinh + "\t" + email + "\t" + sdt);
+        System.out.println(hovaten + "\t" + (gt ? NAM : NU) + "\t" + ntns + "\t" + email + "\t" + sdt);
     }
 
     // Getter and Setter methods
-    public String getMssv() {
-        return mssv;
-    }
-
-    public void setMssv(String mssv) {
-        this.mssv = mssv;
-    }
-
     public String getHovaten() {
         return hovaten;
     }
@@ -66,14 +54,6 @@ import java.util.Scanner;
 
     public void setNtns(int ntns) {
         this.ntns = ntns;
-    }
-
-    public String getNoisinh() {
-        return noisinh;
-    }
-
-    public void setNoisinh(String noisinh) {
-        this.noisinh = noisinh;
     }
 
     public String getEmail() {
@@ -111,11 +91,26 @@ class khaosat {
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
-        this.cauhoi = cauhoi;
     }
   
     public void thuchienkhaosat() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Moi ban nhap 1-3 de hien cau hoi");
+        int h = scanner.nextInt();
+        scanner.nextLine();
+        switch (h) {
+            case 1:
+                System.out.println("1.Ban cam thay the nào ve truong hoc vien hang khong Viet Nam?");
+                break;
+            case 2:
+                System.out.println("2.Ban cho chung toi biet ve cam nhan cua ban khi tham quan hoc vien?");
+                break;
+            case 3:
+                System.out.println("3.Neu y kien rieng cua ban ve hoc vien (neu co)?");
+                break;
+            default:
+                break;
+        }
         System.out.println("Moi ban nhap cau tra loi:");
         System.out.print("Cau tra loi 1: ");
         String option1 = scanner.nextLine();
@@ -161,8 +156,7 @@ class khaosat {
         }
         scanner.close();
     }
-}
-
+    }
 class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -171,11 +165,9 @@ class Main {
         nhaptt sinhvien = null; // Declare sinhvien here
         
         // Declare other variables
-        String mssv = null;
         String hovaten = null;
         boolean gt = false;
         int ntns = 0;
-        String noisinh = null;
         String email = null;
         String sdt = null;
         
@@ -184,9 +176,8 @@ class Main {
             System.out.println("MENU:");
             System.out.println("1. Nhap thong tin sinh vien");
             System.out.println("2. Xac nhan thong tin");
-            System.out.println("3. Nhap cau hoi khac");
-            System.out.println("4. Thuc hien khao sat");
-            System.out.println("5. Thoat");
+            System.out.println("3. Thuc hien khao sat");
+            System.out.println("4. Thoat");
             System.out.println("--------------------------------");
             int choice = scanner.nextInt();
             System.out.print("Lua chon cua ban: " + choice + "\n");
@@ -194,9 +185,6 @@ class Main {
             switch (choice) {
                 case 1:
                     // Nhập thông tin sinh viên
-                    System.out.println("Ma so sinh vien:");
-                    mssv = scanner.nextLine();
-                    
                     System.out.println("Ho va ten: ");
                     hovaten = scanner.nextLine();
                     
@@ -224,9 +212,9 @@ class Main {
                     break; // Add break to end case 1
                 case 2:
                     // Xác nhận thông tin
-                    if (mssv != null && hovaten != null && noisinh != null && email != null && sdt != null) {
+                    if (hovaten != null && email != null && sdt != null) {
                         System.out.println("Xac nhan thong tin tren la dung");
-                        sinhvien = new nhaptt(mssv, hovaten, gt, ntns, noisinh, email, sdt);
+                        sinhvien = new nhaptt("Ho va ten:" + hovaten + "\n","Gioi tinh:" + gt +"\n","Nam sinh:" + ntns +"\n","Email:" + email +"\n","So dien thoai:" + sdt +"\n");
                         sinhvien.xuat();
                     } else {
                         System.out.println("Chua nhap thong tin sinh vien.");
