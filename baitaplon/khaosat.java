@@ -224,7 +224,7 @@ class Main {
                     // Thực hiện khảo sát
                     System.out.println("Ban da lua chon 4, moi nhap");
                     ks.thuchienkhaosat();
-                    break;
+                    continue();
                 case 4:
                     // Thoát
                     System.out.println("Ban da lua chon 5");
