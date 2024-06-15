@@ -1,8 +1,8 @@
+package baitaplon;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
 
 // Lớp nhaptt đại diện cho thông tin sinh viên
 class nhaptt {
@@ -55,9 +55,8 @@ class nhaptt {
 }
 
 // Lớp SurveyApp đại diện cho giao diện người dùng
-public class SurveyApp extends JFrame implements ActionListener {
-    JButton next;
-    JButton btnSurvey;
+public class Main extends JFrame implements ActionListener {
+    JButton btnNext, btnSurvey, btnEdit;
     JLabel heading;
     JTextField txtMSSV, txtHovaTen, txtNoiSinh, txtEmail, txtSDT, txtNamSinh;
     JRadioButton rbtnNam, rbtnNu;
@@ -65,17 +64,17 @@ public class SurveyApp extends JFrame implements ActionListener {
 
     nhaptt sinhvien;
 
-    public SurveyApp() {
+    public Main() {
         setTitle("KHẢO SÁT ONLINE");
-        setSize(600,600);
+        setSize(600, 600);
         setLocationRelativeTo(null);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         heading = new JLabel("KHẢO SÁT HỌC VIÊN");
         heading.setFont(new Font("Arial", Font.BOLD, 20));
-        heading.setForeground(Color.red);
-        heading.setBounds(200, 20, 300, 40);
+        heading.setForeground(Color.RED);
+        heading.setBounds(180, 20, 300, 40);
 
         JLabel lblMSSV = new JLabel("Mã số sinh viên:");
         JLabel lblHovaTen = new JLabel("Họ và tên:");
@@ -115,13 +114,18 @@ public class SurveyApp extends JFrame implements ActionListener {
         rbtnNam.setBounds(180, 400, 60, 30);
         rbtnNu.setBounds(240, 400, 60, 30);
 
-        next = new JButton("Tiếp theo");
-        next.setBounds(400, 300, 150, 30);
-        next.addActionListener(this);
+        btnNext = new JButton("Tiếp theo");
+        btnNext.setBounds(80, 450, 150, 30);
+        btnNext.addActionListener(this);
 
         btnSurvey = new JButton("Thực hiện khảo sát");
-        btnSurvey.setBounds(400, 350, 150, 30);
+        btnSurvey.setBounds(250, 450, 150, 30);
         btnSurvey.addActionListener(this);
+
+        btnEdit = new JButton("Chỉnh sửa");
+        btnEdit.setBounds(420, 450, 150, 30);
+        btnEdit.addActionListener(this);
+        btnEdit.setEnabled(false); // Tắt nút chỉnh sửa cho đến khi thông tin được nhập
 
         add(heading);
         add(lblMSSV);
@@ -139,25 +143,33 @@ public class SurveyApp extends JFrame implements ActionListener {
         add(txtNamSinh);
         add(rbtnNam);
         add(rbtnNu);
-        add(next);
+        add(btnNext);
         add(btnSurvey);
+        add(btnEdit);
 
         setVisible(true);
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == next) {
+        if (e.getSource() == btnNext) {
             // Lấy thông tin từ giao diện
             String mssv = txtMSSV.getText();
             String hovaten = txtHovaTen.getText();
             String noisinh = txtNoiSinh.getText();
             String email = txtEmail.getText();
             String sdt = txtSDT.getText();
-            int ntns = Integer.parseInt(txtNamSinh.getText());
+            int ntns;
+            try {
+                ntns = Integer.parseInt(txtNamSinh.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Vui lòng nhập năm sinh hợp lệ.", "Lỗi", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             boolean gt = rbtnNam.isSelected();
 
             // Kiểm tra dữ liệu hợp lệ
-            if (mssv.equals("") || hovaten.equals("") || noisinh.equals("") || email.equals("") || sdt.equals("")) {
+            if (mssv.isEmpty() || hovaten.isEmpty() || noisinh.isEmpty() || email.isEmpty() || sdt.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin.", "Lỗi", JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -166,35 +178,68 @@ public class SurveyApp extends JFrame implements ActionListener {
             sinhvien = new nhaptt(mssv, hovaten, gt, ntns, noisinh, email, sdt);
 
             // Hiển thị thông tin sinh viên
-            JOptionPane.showMessageDialog(this, "Thông tin sinh viên:\n" + sinhvien.getMssv() + "\n" + sinhvien.getHovaten() + "\n"
-                    + (sinhvien.isGt() ? "Nam" : "Nữ") + "\n" + sinhvien.getNtns() + "\n" + sinhvien.getNoisinh() + "\n" + sinhvien.getEmail() + "\n" + sinhvien.getSdt());
+            JOptionPane.showMessageDialog(this, "Thông tin sinh viên:\n" +
+                    "MSSV: " + sinhvien.getMssv() + "\n" +
+                    "Họ và tên: " + sinhvien.getHovaten() + "\n" +
+                    "Giới tính: " + (sinhvien.isGt() ? "Nam" : "Nữ") + "\n" +
+                    "Năm sinh: " + sinhvien.getNtns() + "\n" +
+                    "Nơi sinh: " + sinhvien.getNoisinh() + "\n" +
+                    "Email: " + sinhvien.getEmail() + "\n" +
+                    "Số điện thoại: " + sinhvien.getSdt());
+
+            btnEdit.setEnabled(true); // Kích hoạt nút chỉnh sửa sau khi thông tin đã được nhập
 
         } else if (e.getSource() == btnSurvey) {
-            // Nếu nhấn vào nút Thực hiện khảo sát
-            new SurveyAPP("Câu 1: Bạn cảm thấy giảng viên của Học viện hàng không Việt Nam như thế nào?");
+            if (sinhvien != null) {
+                new SurveyGUI(sinhvien, 1);
+            } else {
+                JOptionPane.showMessageDialog(this, "Vui lòng nhập thông tin sinh viên trước.", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            }
+        } else if (e.getSource() == btnEdit) {
+            if (sinhvien != null) {
+                // Cho phép chỉnh sửa thông tin
+                txtMSSV.setText(sinhvien.getMssv());
+                txtHovaTen.setText(sinhvien.getHovaten());
+                txtNoiSinh.setText(sinhvien.getNoisinh());
+                txtEmail.setText(sinhvien.getEmail());
+                txtSDT.setText(sinhvien.getSdt());
+                txtNamSinh.setText(String.valueOf(sinhvien.getNtns()));
+                if (sinhvien.isGt()) {
+                    rbtnNam.setSelected(true);
+                } else {
+                    rbtnNu.setSelected(true);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Không có thông tin để chỉnh sửa.", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 
     public static void main(String[] args) {
-        new SurveyApp();
+        new Main();
     }
 }
 
 // Lớp SurveyGUI đại diện cho khảo sát
-class SurveyAPP extends JFrame implements ActionListener {
-    private JButton btnSubmit;
+class SurveyGUI extends JFrame implements ActionListener {
+    private JButton btnNext;
     private JLabel lblQuestion;
     private JRadioButton option1, option2, option3;
     private ButtonGroup optionGroup;
+    private nhaptt sinhvien;
+    private int currentQuestion;
 
-    public SurveyAPP(String question) {
+    public SurveyGUI(nhaptt sinhvien, int questionNumber) {
+        this.sinhvien = sinhvien;
+        this.currentQuestion = questionNumber;
+
         setTitle("KHẢO SÁT");
         setSize(600, 600);
         setLocationRelativeTo(null);
-        setLayout(new GridLayout(7, 3));
+        setLayout(new GridLayout(4, 1));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        lblQuestion = new JLabel(question);
+        lblQuestion = new JLabel(getQuestionText(questionNumber));
         lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
         add(lblQuestion);
 
@@ -207,112 +252,43 @@ class SurveyAPP extends JFrame implements ActionListener {
         optionGroup.add(option2);
         optionGroup.add(option3);
 
-        JPanel radioPanel = new JPanel(new GridLayout(5, 3));
+        JPanel radioPanel = new JPanel(new GridLayout(1, 3));
         radioPanel.add(option1);
         radioPanel.add(option2);
         radioPanel.add(option3);
         add(radioPanel);
 
-        btnSubmit = new JButton("Tiếp theo");
-        btnSubmit.addActionListener(this);
-        add(btnSubmit);
+        btnNext = new JButton("Tiếp theo");
+        btnNext.addActionListener(this);
+        add(btnNext);
 
         setVisible(true);
     }
+
+    @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnSubmit) {
-            new nhapkhaosat("Câu 2: Cho chúng tôi biết cảm nghĩ của bạn về Học viện hàng không Việt Nam?");
+        if (e.getSource() == btnNext) {
+            int nextQuestion = currentQuestion + 1;
+            if (nextQuestion <= 3) {
+                dispose();
+                new SurveyGUI(sinhvien, nextQuestion);
+            } else {
+                JOptionPane.showMessageDialog(this, "KẾT THÚC KHẢO SÁT!\nCẢM ƠN BẠN ĐÃ THAM GIA.");
+                dispose();
+            }
         }
     }
-    public static void main(String[] args) {
-        new SurveyAPP("Câu hỏi khảo sát:");
-    }
-}
 
-class nhapkhaosat extends JFrame implements ActionListener {
-    private JButton btnnhap;
-    private JLabel lblQuestion;
-    private JTextField o;
-
-    public nhapkhaosat(String question1) {
-        setTitle("KHẢO SÁT ONLINE");
-        setSize(600, 600);
-        setLocationRelativeTo(null);
-        setLayout(new GridLayout(7, 3));
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        lblQuestion = new JLabel(question1);
-        lblQuestion.setHorizontalAlignment(SwingConstants.CENTER);
-        add(lblQuestion);
-
-        o = new JTextField();
-        add(o);
-
-        btnnhap = new JButton("Tiếp theo");
-        btnnhap.addActionListener(this);
-        add(btnnhap);
-
-        setVisible(true);
-    }
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnnhap) {
-            new ketthuc("Câu 3: Chương trình đào tạo có quá nặng đối với bạn không. Hãy đánh giá theo mức độ từ 1 đến 5!");
+    private String getQuestionText(int questionNumber) {
+        switch (questionNumber) {
+            case 1:
+                return "Câu 1: Bạn cảm thấy giảng viên của Học viện hàng không Việt Nam như thế nào?";
+            case 2:
+                return "Câu 2: Cho chúng tôi biết cảm nghĩ của bạn về Học viện hàng không Việt Nam?";
+            case 3:
+                return "Câu 3: Chương trình đào tạo có quá nặng đối với bạn không? Hãy đánh giá theo mức độ từ 1 đến 5!";
+            default:
+                return "Câu hỏi không xác định.";
         }
     }
-    public static void main(String[] args) {
-        new nhapkhaosat("Câu hỏi khảo sát:");
-    }
-}
-
-class ketthuc extends JFrame implements ActionListener {
-    private JLabel kt;
-    private JButton k;
-    private JRadioButton k1, k2, k3, k4, k5;
-    private ButtonGroup menu;
-
-    public ketthuc (String question2) {
-        setTitle("KHẢO SÁT ONLINE");
-        setSize(600, 600);
-        setLocationRelativeTo(null);
-        setLayout(new GridLayout(7, 3));
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        kt = new JLabel(question2);
-        kt.setHorizontalAlignment(SwingConstants.CENTER);
-        add(kt);
-
-        k1 = new JRadioButton("1");
-        k2 = new JRadioButton("2");
-        k3 = new JRadioButton("3");
-        k4 = new JRadioButton("4");
-        k5 = new JRadioButton("5");
-
-
-        menu = new ButtonGroup();
-        menu.add(k1);
-        menu.add(k2);
-        menu.add(k3);
-        menu.add(k4);
-        menu.add(k5);
-
-        JPanel radioPanel = new JPanel(new GridLayout(5, 3));
-        radioPanel.add(k1);
-        radioPanel.add(k2);
-        radioPanel.add(k3);
-        radioPanel.add(k4);
-        radioPanel.add(k5);
-        add(radioPanel);
-
-        k = new JButton("Kết thúc");
-        k.addActionListener(this);
-        add(k);
-    }
-    public void actionPerformed(ActionEvent e) {
-        JOptionPane.showMessageDialog(this, "KẾT THÚC KHẢO SÁT!" + "\n" + "CẢM ƠN BẠN ĐÃ KHẢO SÁT");
-        this.dispose();
-        }
-    public static void main(String[] args) {
-        new ketthuc("Câu hỏi khảo sát");
-    }
-
 }
