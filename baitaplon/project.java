@@ -1,4 +1,3 @@
-package baitaplon;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -284,9 +283,9 @@ class SurveyGUI extends JFrame implements ActionListener {
             case 1:
                 return "Câu 1: Bạn cảm thấy giảng viên của Học viện hàng không Việt Nam như thế nào?";
             case 2:
-                return "Câu 2: Cho chúng tôi biết cảm nghĩ của bạn về Học viện hàng không Việt Nam?";
+                return "Câu 2: Học lực của bạn khi học ở Học viện hàng không Việt Nam?";
             case 3:
-                return "Câu 3: Chương trình đào tạo có quá nặng đối với bạn không? Hãy đánh giá theo mức độ từ 1 đến 5!";
+                return "Câu 3: Chương trình đào tạo có quá nặng đối với bạn không?";
             default:
                 return "Câu hỏi không xác định.";
         }
