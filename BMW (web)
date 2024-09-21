@@ -14,7 +14,7 @@
         <div>
                 <ul class="head" style="position:fixed">
                     <li><img id="img1"src="Logo.png" alt="Logo BMW"></li>
-                    <li><a href="TRANGCHU.html" style="text-decoration: none;color:white"><b>TRANG CHỦ</b></a></li>
+                    <li><a href="WEB.html" style="text-decoration: none;color:white"><b>TRANG CHỦ</b></a></li>
                     <li><a href="SANPHAM.html" style="text-decoration: none;color:white"><b>SẢN PHẨM</b></a> </li>
                     <li><a href="BANGGIA.html" style="text-decoration: none;color:white"><b>BẢNG GIÁ 2024</b></a> </li>
                     <li><a href="TUYENDUNG.html" style="text-decoration: none;color:white"><b>TUYỂN DỤNG</b></a></li> 
