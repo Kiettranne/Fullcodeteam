@@ -3,10 +3,12 @@ body{
     width:100%;
 }
 
-.head{
+.head {
     display:flex;
     position:fixed;
     margin: 20px 0px 0px 20px;
+    flex-wrap:wrap;
+    z-index:1;
 }
 
 ul li{
@@ -19,7 +21,6 @@ ul li{
     text-align: center;
     justify-content: center;
     font-size: 18px;
-    margin-top: 20px;
 }
 
 .ct-button {
@@ -29,42 +30,49 @@ ul li{
 }
 
 .button {
-    color:black;
-    min-width:90px;
-    height:40px;
+    background-color:white;
+    color:rgba(0,0,0,0.45);
+    min-width:100px;
+    min-height:50px;
     box-sizing: content-box;
+    text-decoration: none;
+    font-size:18px;
+    border:1px solid rgba(0,0,0,0.25);
+    cursor: pointer;
 }
 
-.button:hover {
+.ct-container .button:hover {
     background-color: black;
     color:white;
-    width:80px;
-    height:40px;
+    min-width:100px;
+    min-height:50px;
     box-sizing: content-box;
+    font-size:18px;
+    border:1px solid rgba(0,0,0,0.25);
 }
 
-.button:active {
+.ct-container .button:active {
     background-color: rgba(red, green, blue, alpha);
     color:white;
-    width:80px;
-    height:40px;
+    min-width:100px;
+    min-height:50px;
     box-sizing: content-box;
+    font-size:18px;
+    border:1px solid rgba(0,0,0,0.25);
 }
 
 .line {
-    border:1px solid black;
+    border:1px solid rgba(0,0,0,0.07);
     width:97%;
     margin:auto;
 
 }
 
 .blockimg {
-    justify-content: space-around;
-    display:flex;
+    display:block;
     background-color: white;
-    width: 100%;
     min-height:400px;
-    margin:80px 0px;
+    margin:80px 35px;
     transform: translateX(-110%);
     animation: SlideIn ease 1s;
     animation-fill-mode: forwards;
@@ -79,23 +87,111 @@ ul li{
     } 
 }
 
-.title-menu {
+.blockimg .title-menu {
     font-size: 16px;
 }
 
-.title-menu:hover {
+.blockimg .title-menu:hover {
     font-size: 16px;
     color:blue;
 }
 
-.ct-menu {
+.blockimg .ct-menu {
     font-size:13px;
     font-weight: bold;
     color:grey;
 }
 
 .dichvu {
+    background-color:rgb(246,246,246);
+    width:100%;
+    min-height:408px;
+    border:1px solid rgba(0,0,0,0.12);
+    align-items: center;
+}
+
+.dichvu .dv-head {
     text-align: center;
 }
 
+.dv-ct {
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 120px;
+}
 
+.dv-ct-item {
+    cursor: pointer!important;
+}
+
+.dv-ct-item .dv-button {
+    border:1px solid rgba(0,0,0,0.25);
+    border-radius:2px;
+    box-sizing: content-box;
+    min-width:200px;
+    min-height:50px;
+    cursor:pointer;
+    background-color: transparent;
+}
+
+.dv-ct-item .dv-button:hover {
+    border:1px solid rgba(0,0,0,0.25);
+    border-radius:2px;
+    box-sizing: content-box;
+    min-width: 200px;
+    min-height:50px;
+    cursor:pointer;
+    background-color: black;
+    color:white;
+}
+
+.intro {
+    position:absolute;
+    margin-top:50px;
+    display:inline-flex;
+}
+
+.intro #img5 {
+    background-size: cover;
+    margin:auto;
+    box-sizing: padding-box;
+    width:100%;
+    cursor: pointer;
+}
+
+.intro-ct {
+    position: absolute;
+    margin-top:80px;
+    left: 40px;
+    font-size: 23px;
+    color: white;
+}
+
+.intro-ct:hover {
+    position: absolute;
+    margin-top:80px;
+    left: 40px;
+    font-size: 23px;
+    color: rgb(119, 125, 202);
+}
+
+.intro-ct button {
+    border:1px solid white;
+    min-width:259px;
+    height:50px;
+    text-align: center;
+    background-color: transparent;
+    color:white;
+    cursor: pointer;
+}
+
+.intro-ct button :hover {
+    border:1px solid rgba(0,0,0,0.25);
+    min-width:250px;
+    height:50px;
+    text-align: center;
+    background-color: white;
+    color:black;
+}
