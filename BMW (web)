@@ -31,9 +31,15 @@
             <p style="font-size:50px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">CHỌN DÒNG XE</p>
         </div>
         <div class="ct-button">
-            <button class="button"><a href="SANPHAM.html" style="text-decoration:none"><b>BMW</b></a></button>
-            <button class="button"><a href="SANPHAM.html" style="text-decoration:none"><b>BMW M</b></a></button>
-            <button class="button"><a href="SANPHAM.html" style="text-decoration:none"><b>BMW i</b></a></button>
+            <a href="SANPHAM.html">
+                <button class="button"><b>BMW</b></button>
+            </a>
+            <a href="SANPHAM.html">
+                <button class="button"><b>BMW M</b></button>
+            </a>
+            <a href="SANPHAM.html">
+                <button class="button"><b>BMW i</b></button>
+            </a>
         </div>
         <div>
             <div class="line"></div>
@@ -42,7 +48,7 @@
     <div class="blockimg"> 
         <a href="SANPHAM.html" style="text-decoration:none; color:black">
         <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_290,h_193,q_auto,c_fill,f_auto,fl_lossy/auto-titan/fe4c961c128aef281411d22651e3d361/new_bmw_xm_series.png"
-        alt="Hình BMW XM" style="min-width:150px;height:200px">
+        alt="Hình BMW XM" style="min-width:100px;height:200px">
         <div class="title-menu">
             <h3><b>BMW XM</b></h3>
         </div>
@@ -51,33 +57,60 @@
             <p>Giá từ 10.990.000.000 VNĐ</p>
         </div>
         </a>
-        <a href="SANPHAM.html" style="text-decoration:none; color:black">
-            <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_290,h_193,q_auto,c_fill,f_auto,fl_lossy/auto-titan/fe4c961c128aef281411d22651e3d361/new_bmw_xm_series.png"
-            alt="Hình BMW XM" style="min-width:150px;height:200px">
-            <div class="title-menu">
-                <h3><b>BMW XM</b></h3>
-            </div>
-            <div class="ct-menu">
-                <p>Plug - in Hybrid</p>
-                <p>Giá từ 10.990.000.000 VNĐ</p>
-            </div>
-            </a>
-            <a href="SANPHAM.html" style="text-decoration:none; color:black">
-                <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_290,h_193,q_auto,c_fill,f_auto,fl_lossy/auto-titan/fe4c961c128aef281411d22651e3d361/new_bmw_xm_series.png"
-                alt="Hình BMW XM" style="min-width:150px;height:200px">
-                <div class="title-menu">
-                    <h3><b>BMW XM</b></h3>
-                </div>
-                <div class="ct-menu">
-                    <p>Plug - in Hybrid</p>
-                    <p>Giá từ 10.990.000.000 VNĐ</p>
-                </div>
-                </a>
     </div>
     <div class="dichvu">
         <div class="dv-head">
             <h1>DỊCH VỤ BMW</h1>
+        <div>
+        <div class="dv-ct">
+            <div class="dv-ct-item">
+                    <a href="DANGKI.html" target="blank" style="text-decoration:none; color:black">
+                    <div>
+                    <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_180,h_135,q_auto,c_fill,f_auto,fl_lossy/auto-titan/a876765b525a5c3046cefecff6af6970/microsoftteams_image_8_.png">
+                    </div>
+                    <div>
+                    <h2 style="font-family:Vernda">Đặt Hẹn Dịch Vụ BMW</h2>
+                        <button class="dv-button"><b>Đặt ngay</b></button>
+                    </div>
+                    </a>
+            </div>
+            <div class="dv-ct-item">
+                    <a href="DANGKI.html" target="blank" style="text-decoration:none; color:black">
+                    <div>
+                    <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_180,h_135,q_auto,c_fill,f_auto,fl_lossy/auto-titan/b02c5326c760e99f3e710f9a089694c1/microsoftteams_image_9_.png">
+                    </div>
+                    <div>
+                    <h2 style="font-family:Vernda">Đăng Kí Nhận Ưu Đãi</h2>
+                        <button class="dv-button"><b>Đặt ngay</b></button>
+                    </div>
+                    </a>
+            </div>
+            <div class="dv-ct-item">
+                    <a href="DANGKI.html" target="blank" style="text-decoration:none; color:black">
+                    <div>
+                    <img src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_180,h_135,q_auto,c_fill,f_auto,fl_lossy/auto-titan/2c3a06f266b5c9da40f10294690b7f2b/microsoftteams_image_7_.png">
+                    </div>
+                    <div>
+                    <h2 style="font-family:Vernda">Đặt Lịch Lái Thử</h2>
+                        <button class="dv-button"><b>Đặt ngay</b></button>
+                    </div>
+            </div>
         </div>
+        </div>
+    </div>
+    <div class="intro">
+        <a href="DANGKI.html" target="blank">
+            <img id="img5" src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_1520,h_507,q_auto,c_fill,f_auto,fl_lossy/auto-titan/8b63788d8b81f6e7e4e7ce6301175326/xm_banner.jpg" alt="Hình xe BMW XM">
+        </a>
+        <div class="intro-ct">
+            <a href="SANPHAM.html" target="blank" style="text-decoration:none; color:white">
+                <h6>THE FIRST - EVER XM</h6>
+                <h2>BMW XM</h2>
+                <h2>THẾ HỆ ĐẦU TIÊN</h2>
+                <button>Khám Phá Ngay</button>
+            </a>
+        </div>   
+    </div>
     </div>
 </body>
 
