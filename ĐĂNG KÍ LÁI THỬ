@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>TRANG CHỦ</title>
+        <title>ĐĂNG KÍ LÁI THỬ</title>
         <meta name="viewport" display="width=device-width;intitial-scale=1">
         <meta charset="uft-8">
         <link href="Logo.png" rel="bmw icon">
         <link rel="stylesheet" href="main.css" type="text/css">
     </head>
     <body style="font-family:Arial, Helvetica, sans-serif">
-        <div>
+        <div class="head">
             <div>
-                    <ul class="head" style="position:fixed">
-                        <li><img id="img1"src="Logo.png" alt="Logo BMW"></li>
-                        <li><a href="TRANGCHU.html" style="text-decoration: none;color:black"><b>TRANG CHỦ</b></a></li>
-                        <li><a href="SANPHAM.html" style="text-decoration: none;color:black"><b>SẢN PHẨM</b></a> </li>
-                        <li><a href="BANGGIA.html" style="text-decoration: none;color:black"><b>BẢNG GIÁ 2024</b></a> </li>
-                        <li><a href="TUYENDUNG.html" style="text-decoration: none;color:black"><b>TUYỂN DỤNG</b></a></li> 
-                        <li><a href="LIENHE.html" style="text-decoration: none;color:black"><b>LIÊN HỆ</b></a></li>
-                        <li><a href="DANGKI.html" style="text-decoration: none;color:black"><b>ĐĂNG KÍ LÁI THỬ</b></a></li>
-                    </ul>
+                <img src="Logo.png" alt="Logo BMW" style="width:60px;height:60px">
             </div>
-            <div>
-                <div class="line"></div>
-            </div>
-        
+            <ul>
+                <li><a href="WEB.html" style="text-decoration: none;color:black"><b>TRANG CHỦ</b></a></li>
+                <li><a href="SANPHAM.html" style="text-decoration: none;color:black"><b>SẢN PHẨM</b></a> </li>
+                <li><a href="BANGGIA.html" style="text-decoration: none;color:black"><b>BẢNG GIÁ 2024</b></a> </li>
+                <li><a href="TUYENDUNG.html" style="text-decoration: none;color:black"><b>TUYỂN DỤNG</b></a></li> 
+                <li><a href="LIENHE.html" style="text-decoration: none;color:black"><b>LIÊN HỆ</b></a></li>
+                <li><a href="DANGKI.html" style="text-decoration: none;color:black"><b>ĐĂNG KÍ LÁI THỬ</b></a></li>
+            </ul>
+        </div>
     </body>
 </html>
