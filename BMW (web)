@@ -153,7 +153,47 @@
             </div>
         </div>
         <!-- Footer -->
-        <div id="footer"></div>
+        <div id="footer">
+            <div id="footer-item">
+                <ul class="footer-list">
+                    <li><a href="">Liên hệ tư vấn BMW</a></li>
+                    <li><a href="">Showroom BMW</a></li>
+                    <li><a href="">Tìm hiểu về My App</a></li>
+                    <li><a href="">BMW Asia</a></li>
+                    <li><a href="">BMW PresClub Asia</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Footer-last -->
+        <div id="footer-last">
+            <div id="footer-item">
+                <div class="footer-icon">
+                    <a href="https://www.facebook.com/Official.BMWVietnam" target="blank" alt="Link Facebook BMW">
+                        <img class="fb" src="Hinh/Facebook-color.png" alt="Logo Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/bmw_vietnam/" target="blank" alt="Link Instagram BMW">
+                        <img class="ins" src="Hinh/Instagram-color.png" alt="Logo Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/BMWVietnamChannel" target="blank" alt="Link Youtube BMW">
+                        <img class="you" src="Hinh/Youtube-color.png" alt="Logo Youtube">
+                    </a>
+                </div>
+                <div class="footer-principle">
+                    <a href="">
+                        Từ chối trách nhiệm pháp lí
+                    </a>
+                    <a href="">
+                        Chính sách bảo mật
+                    </a>
+                    <a href="">
+                        Chính sách cookie
+                    </a>
+                    <a href="">
+                        Thông tin pháp lí
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
