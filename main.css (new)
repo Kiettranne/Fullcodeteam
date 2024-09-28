@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 #container {
@@ -16,6 +16,24 @@ body {
     transition: background-color 0.5s ease;
     position: fixed;
     top:0px;
+    z-index: 1;
+    border-bottom: 1px solid white;
+    cursor:pointer;
+}
+
+.scrolled {
+    background-color: white;
+}
+
+#header:hover{
+    height:70px;
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    width:100%;
+    transition: background-color 0.5s ease;
+    position: fixed;
+    top:0px;
+    z-index: 1;
 }
 
 #header-item {
@@ -28,13 +46,33 @@ body {
     display:flex;
 }
 
-#header-item .menu-list .item a{
+#header-item .menu-list li {
+    list-style-type: none;
+}
+
+#header-item .menu-list li:hover {
+    list-style-type: none;
+}
+
+#header-item .menu-list li a{
+    text-decoration: none;
+    color:grey;
+    margin-right:20px;
+    font-size:16px;
+    font-weight:bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header-item .menu-list li a:hover{
     text-decoration: none;
     color:black;
     margin-right:20px;
     font-size:16px;
     font-weight:bold;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition:color .3s linear;
+    border-bottom: 3px solid black;
+    transition:border-bottom .3s linear;
 }
 
 /* Content */
@@ -55,7 +93,7 @@ body {
     text-align: center;
     border-bottom: 1px solid rgba(0,0,0,0.07);
     font-family:arial;
-    margin-top:10%;
+    margin-top:5%;
 }
 
 #content #content-header .content-img img{
@@ -66,7 +104,7 @@ body {
 
 #content #content-header .content-img img:hover {
     transform: scale(1.20);
-    border-bottom: 2px solid rgb(140,186,219);
+    animation: AnimaLefttoRight 4s ease infinite;
 }
 
 #content #content-header .content-img a{
@@ -82,19 +120,21 @@ body {
 #dichvu {
     width:100%;
     height:480px;
-    background-color: rbg(246,246,246);
+    background-color:rgba(0,0,0,0.07);
 }
 
 #dichvu #dichvu-header {
     text-align: center;
-    font-size:40px;
+    font-size:35px;
     font-family: arial;
-    font-weight: 700;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
 }
 
 #dichvu #dichvu-content {
     display:flex;
     justify-content: space-around;
+    font-family: arial;
 }
 
 
@@ -123,8 +163,9 @@ body {
     height:50px;
     font-weight: bold;
     border:none;
-    background-color: rgba(0,0,0,0.07)  ;
-    transition: transform .3s ease;
+    background-color: rgba(0,0,0,0.07);
+    transition: all .3s ease;
+    cursor: pointer;
 }
 
 #dichvu #dichvu-content .dichvu-content-content a button:hover {
@@ -134,5 +175,115 @@ body {
     border:none;
     background-color:black ;
     color:white;
-    transform:scale(1.25)
+    transition: all .3s ease;
+}
+
+/* Intro */
+#intro {
+    position:relative;
+    width:100%;
+    height:550px;
+}
+
+#intro #intro-header .intro-img {
+    position:absolute;
+    background-size: cover;
+}
+
+#intro #intro-header .intro-content {
+    display:inline-block;
+    position:absolute;
+    margin-left: 40px;
+    margin-block-start: calc(250px/2);
+    font-family: arial;
+    font-weight: bold;
+}
+
+#intro #intro-header .intro-content h3 {
+    font-size: 18px;
+}
+
+#intro #intro-header .intro-content h1 {
+    font-size: 40px;
+}
+
+#intro #intro-header .intro-content a{
+    text-decoration: none;
+    color:white;
+}
+
+#intro #intro-header .intro-content button {
+    min-width: 300px;
+    height:50px;
+    font-size: 16px;
+    border-color: transparent;
+    background-color: rgba(0,0,0,0.35);
+    color:white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+#intro #intro-header .intro-content button:hover {
+    min-width: 300px;
+    height:50px;
+    border-color: transparent;
+    background-color: white;
+    color:black;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color .3s ease;
+}
+
+/* Scan QR */
+#scanqr {
+    position: relative;
+    width:100%;
+    height:450px;
+    cursor: pointer;
+}
+
+#scanqr #scanqr-total {
+    display:flex;
+    position: absolute;
+    padding:0px 40px;
+}
+
+#scanqr #scanqr-total .scanqr-content  {
+    margin-left:20px;
+    font-family: arial;
+    margin-top: 45px;
+}
+
+#scanqr #scanqr-total .scanqr-content h1 {
+    font-size: 40px;
+}
+
+#scanqr #scanqr-total .scanqr-content p {
+    font-size: 18px;
+}
+
+#scanqr #scanqr-total .scanqr-content button{
+    min-width:300px;
+    height:50px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgba(0,0,0,0.08);
+    border:none;
+    cursor:pointer;
+    transition: all .3s ease;
+}
+
+#scanqr #scanqr-total .scanqr-content button:hover{
+    min-width:300px;
+    height:50px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    background-color:black;
+    color:white;
+    border:none;
+    cursor:pointer;
+    transition: all .3s ease;
 }
