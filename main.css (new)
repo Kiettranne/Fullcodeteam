@@ -3,6 +3,7 @@ body {
     margin: 0 auto;
     padding: 0;
 }
+/* TRANG CHỦ WEB */
 #container {
     width:100%;
     height:100vh;
@@ -13,16 +14,17 @@ body {
     background-size:cover;
     border-bottom: 1px solid rgba(0,0,0,0.07);
     width:100%;
-    transition: background-color 0.5s ease;
     position: fixed;
     top:0px;
     z-index: 1;
     border-bottom: 1px solid white;
     cursor:pointer;
+    transition: background-color 0.5s ease;
 }
 
 .scrolled {
     background-color: white;
+    transition: background-color 0.5s ease;
 }
 
 #header:hover{
@@ -38,7 +40,7 @@ body {
 
 #header-item {
     display:flex;
-    margin-left:20px;
+    margin-left:30px;
     align-items: center;
 }
 
@@ -258,7 +260,7 @@ body {
 }
 
 #scanqr #scanqr-total .scanqr-content h1 {
-    font-size: 40px;
+    font-size: 45px;
 }
 
 #scanqr #scanqr-total .scanqr-content p {
@@ -363,4 +365,84 @@ body {
     font-size: 16px;
     font-weight: bold;
     transition:color .3s ease;
+}
+
+
+/* ĐĂNG KÍ LÁI THỬ */
+#container-general {
+    width:100%;
+    height:100%;
+}
+
+#header-general {
+    height:70px;
+    background-size:cover;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    width:100%;
+    top:0px;
+    z-index: 1;
+    border-bottom: 1px solid white;
+    cursor:pointer;
+    position: fixed;
+}
+
+#header-general .scrolled {
+    background-color: black;
+}
+
+#header-general:hover{
+    height:70px;
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    width:100%;
+    transition: background-color 0.5s ease;
+    position: fixed;
+    top:0px;
+    z-index: 1;
+}
+
+#header-item-general {
+    display:flex;
+    margin-left:20px;
+    align-items: center;
+}
+
+#header-item-general .menu-list {
+    display:flex;
+}
+
+#header-item-general .menu-list li {
+    list-style-type: none;
+}
+
+#header-item-general .menu-list li:hover {
+    list-style-type: none;
+}
+
+#header-item-general .menu-list li a{
+    text-decoration: none;
+    color:grey;
+    margin-right:20px;
+    font-size:16px;
+    font-weight:bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header-item-general .menu-list li a:hover{
+    text-decoration: none;
+    color:black;
+    margin-right:20px;
+    font-size:16px;
+    font-weight:bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition:color .3s linear;
+    border-bottom: 3px solid black;
+    transition:border-bottom .3s linear;
+}
+
+/* Form đăng kí lái thử */
+#form-dangkilt {
+    width:100%;
+    height:400px;
+    margin-top: 150px;
 }
