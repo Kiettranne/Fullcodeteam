@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Connected Drive: Dịch vụ và kết nối trực tuyến</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="icon" href="Logo.png">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div id="container-general">
+        <div id="header-general">
+            <div id="header-item-general">
+                <a href="index.html">
+                    <img src="Hinh/Logo.png" style="width:60px;height:60px">
+                </a>
+                <ul class="menu-list">
+                    <li><a href="index.html">TRANG CHỦ</a></li>
+                    <li><a href="SANPHAM.html">SẢN PHẨM</a></li>
+                    <li><a href="BANGGIA.html">BẢNG GIÁ 2024</a></li>
+                    <li><a href="LIENHE.html">LIÊN HỆ</a></li>
+                    <li><a href="DANGKILT.html">ĐĂNG KÍ LÁI THỬ</a></li>
+                    <li><a href="DATXE.html">ĐẶT XE</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="overview">
+        <div id="overview-total">
+            <div class="overview-content-1">
+                <img src="Hinh/BMW-connected-drive.webp">
+                <p>Các sản phẩm kỹ thuật số và dịch vụ kết nối từ BMW ConnectedDrive cung cấp cho bạn các chức năng hữu ích. Tính thông minh và sáng tạo sẽ giúp cuộc sống của bạn dễ dàng hơn.</p>
+                <h2>NHỮNG TÍNH NĂNG NỔI BẬT CỦA BMW CONNECTEDDRIVE.</h2>
+            </div>
+            <div class="overview-content-2">
+                <div class="overview-content-2-1">
+                    <img src="Hinh/BMW-connected-drive1.webp">
+                    <h1>BMW iDrive</h1>
+                    <ul>
+                        <li><p>Tích hợp đầy đủ các tính năng cần thiết trong<br> một thiết kế cực kỳ hiện đại.</p></li>
+                        <li><p>Trải nghiệm nội thất hoàn toàn mới với công<br> nghệ cảm biến và trí tuệ nhân tạo.</p></li>
+                        <li><p>Tương tác trực quan và tự nhiên giữa người lái<br> và xe.</p></li>
+                    </ul>
+                    <button>Tìm hiểu thêm về BMW iDrive</button>
+                </div>
+                <div class="overview-content-2-1">
+                    <img src="Hinh/BMW-connected-drive2.webp">
+                    <h1>Ứng dụng My BMW</h1>
+                    <ul>
+                        <li><p>Giao diện mới cùng hướng dẫn sử dụng trực<br> quan, đi kèm các tính năng thông minh.</p></li>
+                        <li><p>Kiểm tra tình trạng xe.</p></li>
+                        <li><p>Gửi điểm đến cho xe.</p></li>
+                        <li><p>Điều khiển xe từ xa.</p></li>
+                        <li><p>Định vị xe qua điện thoại thông minh.</p></li>
+                    </ul>
+                    <button>Tìm hiểu thêm về ứng dụng My BMW</button>
+                </div>
+                <div class="overview-content-2-1">
+                    <img src="Hinh/BMW-connected-drive3.webp">
+                    <h1>Hệ thống trợ lý ảo thông minh<br> BMW Intelligent<br> Personal Assistant.</h1>
+                    <ul>
+                        <li><p>Luôn có trợ lý cá nhân hỗ trợ trên mọi hành<br> trình.</p></li>
+                        <li><p>Giao tiếp với xe của bạn một cách dễ dàng và<br> hiệu quả.</p></li>
+                        <li><p>Dễ dàng sử dụng các chức năng của xe thông<br> qua tính năng điều khiển thiết bị bằng giọng<br> nói.</p></li>
+                        <li><p>Tìm hiểu thông tin và hiểu rõ hơn về chiếc<br> BMW của bạn.</p></li>
+                        <li><p>Định vị xe qua điện thoại thông minh.</p></li>
+                    </ul>
+                    <button>Tìm hiểu thêm về trợ lí cá nhân thông minh BMW</button>
+                </div>
+            </div>
+            <div class="overview-content-3">
+                <h1>MANG CÁC ỨNG DỤNG YÊU THÍCH ĐỒNG HÀNH CÙNG BẠN TRÊN MỌI<br> CHẶNG ĐƯỜNG</h1>
+                <div class="overview-content-3-total">
+                    <div class="overview-content-2-android">
+                        <img src="Hinh/Android auto.webp">
+                        <h3>Android Auto™</h3>
+                        <ul class="overview-content-2-android-content">
+                            <li>Sử dụng các tính năng của điện thoại thông minh một cách thoải mái và<br> an toàn bên trong xe.</li>
+                            <li>Truy cập vào các ứng dụng âm nhạc, phương tiện hoặc nhắn tin</li>
+                            <li>Kết nối Android Auto™ không dây.</li>
+                            <li>Tương tác với Trợ lý Google thông qua điều khiển thiết bị bằng giọng nói<br> bên trong xe.</li>
+                        </ul>
+                        <a href=""><button>Tìm hiểu thêm về Android Auto™</button></a>
+                    </div>
+                    <div class="overview-content-2-apple">
+                        <img src="Hinh/Apple carplay.webp">
+                        <h3>Apple CarPlay©</h3>
+                        <ul class="overview-content-2-apple-content">
+                            <li>Sử dụng các tính năng của iPhone trong khi lái xe.</li>
+                            <li>Kết nối iPhone không dây, nội dung hiển thị toàn màn hình trên màn hình<br> trung tâm của xe</li>
+                            <li>Dễ dàng truy cập các ứng dụng như Apple Music, iMessage, điện thoại,<br> Siri, Apple Maps hoặc các ứng dụng của bên thứ ba như Spotify,<br> Google Maps trên xe.</li>
+                        </ul>
+                        <a href=""><button>Thông tin thêm về Apple CarPlay©</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
